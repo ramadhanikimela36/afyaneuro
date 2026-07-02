@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#1e7fe0" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Brain outline (stylized) -->
+  <g stroke="#ff7a1a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left hemisphere -->
+    <path d="M 100 40 Q 85 50 80 65 Q 75 80 78 95 Q 82 110 95 120"/>
+    
+    <!-- Right hemisphere -->
+    <path d="M 100 40 Q 115 50 120 65 Q 125 80 122 95 Q 118 110 105 120"/>
+    
+    <!-- Brain folds/gyri -->
+    <path d="M 85 65 Q 85 75 88 85" opacity="0.7"/>
+    <path d="M 115 65 Q 115 75 112 85" opacity="0.7"/>
+    <path d="M 78 80 Q 85 85 92 80" opacity="0.6"/>
+    <path d="M 122 80 Q 115 85 108 80" opacity="0.6"/>
+  </g>
+  
+  <!-- Neural connections (blue) -->
+  <g stroke="#7fc0ff" stroke-width="1.5" fill="none" opacity="0.6">
+    <!-- Connection points -->
+    <circle cx="75" cy="90" r="2" fill="#7fc0ff"/>
+    <circle cx="125" cy="90" r="2" fill="#7fc0ff"/>
+    <circle cx="100" cy="50" r="2" fill="#7fc0ff"/>
+    <circle cx="100" cy="120" r="2" fill="#7fc0ff"/>
+    
+    <!-- Connecting lines -->
+    <path d="M 75 90 L 100 70"/>
+    <path d="M 125 90 L 100 70"/>
+    <path d="M 75 90 L 100 110"/>
+    <path d="M 125 90 L 100 110"/>
+  </g>
+  
+  <!-- Center accent dot -->
+  <circle cx="100" cy="100" r="3" fill="#ff7a1a"/>
+  
+  <!-- Spinal cord (simplified) -->
+  <line x1="100" y1="120" x2="100" y2="155" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="100" cy="135" r="1.5" fill="#7fc0ff" opacity="0.7"/>
+  <circle cx="100" cy="145" r="1.5" fill="#7fc0ff" opacity="0.7"/>
+</svg>
