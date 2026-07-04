@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Circle of Willis: Why It Matters at the Bedside — AfyaNeuro</title>
+<meta name="description" content="A clear walkthrough of the brain's arterial supply, the Circle of Willis, and how to reason through it in exams and at the bedside. By Ramadhani Kimela, AfyaNeuro.">
+<meta property="og:title" content="The Circle of Willis: Why It Matters at the Bedside">
+<meta property="og:description" content="Breaking down the brain's arterial supply clearly — for medical students and junior doctors.">
+<meta property="og:url" content="https://afyaneuro.com/circle-of-willis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@afyaneuro">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg: #0b1320;
+    --bg-soft: #101b2e;
+    --panel: #14233a;
+    --line: #233048;
+    --text: #e8ecf4;
+    --text-dim: #9aafc9;
+    --accent: #ff7a1a;
+    --accent-soft: #ffb877;
+    --blue: #1e7fe0;
+    --blue-soft: #7fc0ff;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "IBM Plex Sans", Arial, sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.7;
+  }
+
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  /* HEADER */
+  header{
+    position: sticky; top: 0; z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 6vw;
+    border-bottom: 1px solid var(--line);
+    background: rgba(11,19,32,0.96);
+    backdrop-filter: blur(8px);
+  }
+  .logo{
+    display:flex; align-items:center; gap:0.6rem;
+    font-family: var(--serif); font-size:1.2rem; font-weight:700;
+    text-decoration: none;
+  }
+  .logo img{ height:34px; width:auto; }
+  .logo .afya{ color: var(--blue-soft); }
+  .logo .neuro{ color: var(--accent); }
+  .back-link{
+    font-size: 0.9rem; color: var(--text-dim);
+    display:flex; align-items:center; gap:0.4rem;
+  }
+  .back-link:hover{ color: var(--text); text-decoration:none; }
+
+  /* ARTICLE LAYOUT */
+  .article-wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 6vw 6rem;
+  }
+
+  /* META */
+  .article-meta{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .topic-badge{
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(255,122,26,0.12);
+    border: 1px solid rgba(255,122,26,0.3);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .meta-text{
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* TITLE */
+  .article-title{
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+  .article-subtitle{
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .byline{
+    display:flex; align-items:center; gap:0.8rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2.5rem;
+  }
+  .byline-avatar{
+    width: 40px; height:40px; border-radius:50%;
+    background: linear-gradient(135deg, var(--blue), var(--accent));
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1rem; color:#fff; flex-shrink:0;
+  }
+  .byline-name{ font-weight:600; font-size:0.95rem; }
+  .byline-role{ font-size:0.82rem; color: var(--text-dim); }
+
+  /* BODY TEXT */
+  .article-body h2{
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 2.5rem 0 0.8rem;
+    color: var(--text);
+  }
+  .article-body h3{
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 0.6rem;
+    color: var(--accent-soft);
+  }
+  .article-body p{
+    margin: 0 0 1.3rem;
+    color: var(--text);
+    font-size: 1.05rem;
+  }
+  .article-body strong{ color: var(--accent-soft); }
+  .article-body em{ color: var(--blue-soft); font-style: italic; }
+
+  /* CALLOUT BOXES */
+  .callout{
+    border-left: 3px solid var(--accent);
+    background: var(--panel);
+    border-radius: 0 10px 10px 0;
+    padding: 1.2rem 1.4rem;
+    margin: 1.8rem 0;
+  }
+  .callout.blue{ border-left-color: var(--blue); }
+  .callout.green{ border-left-color: #2ecc71; }
+  .callout-label{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .callout.blue .callout-label{ color: var(--blue-soft); }
+  .callout.green .callout-label{ color: #2ecc71; }
+  .callout p{ margin:0; font-size:0.97rem; color: var(--text-dim); }
+
+  /* DIAGRAM */
+  .diagram-box{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .diagram-box svg{ max-width:100%; height:auto; }
+  .diagram-caption{
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    margin-top: 1rem;
+  }
+
+  /* KEY POINTS LIST */
+  .key-points{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.6rem 1.8rem;
+    margin: 2rem 0;
+  }
+  .key-points h3{
+    margin: 0 0 1rem;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--accent-soft);
+  }
+  .key-points ul{ margin:0; padding-left:1.2rem; }
+  .key-points li{
+    color: var(--text-dim);
+    font-size: 0.97rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  .key-points li strong{ color: var(--text); }
+
+  /* DIVIDER */
+  .divider{
+    border:none;
+    border-top: 1px solid var(--line);
+    margin: 2.5rem 0;
+  }
+
+  /* AUTHOR BOX */
+  .author-box{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.6rem;
+    margin-top: 3rem;
+    display:flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+  .author-avatar{
+    width:56px; height:56px; border-radius:50%;
+    background: linear-gradient(135deg, var(--blue), var(--accent));
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.3rem; color:#fff; flex-shrink:0;
+  }
+  .author-name{ font-weight:600; font-size:1rem; margin-bottom:0.2rem; }
+  .author-bio{ font-size:0.88rem; color: var(--text-dim); line-height:1.6; }
+
+  /* SHARE */
+  .share-row{
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center;
+  }
+  .share-label{ font-size:0.88rem; color:var(--text-dim); }
+  .share-btn{
+    display:inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius:999px;
+    font-size:0.85rem;
+    font-weight:600;
+    border: 1px solid var(--line);
+    color: var(--text);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .share-btn:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 2rem 6vw;
+    text-align:center;
+    color: var(--text-dim);
+    font-size:0.85rem;
+  }
+  footer a{ color:var(--text-dim); }
+  footer a:hover{ color:var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="afyaneuro-logo.png" alt="AfyaNeuro">
+    <span class="afya">Afya</span><span class="neuro">Neuro</span>
+  </a>
+  <a href="index.html" class="back-link">← Back to articles</a>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="topic-badge">Neuroanatomy</span>
+    <span class="meta-text">July 2026 · 6 min read</span>
+  </div>
+
+  <h1 class="article-title">The Circle of Willis: Why It Matters at the Bedside</h1>
+  <p class="article-subtitle">
+    A clear walkthrough of the brain's arterial supply, the anastomoses
+    that protect against stroke, and how to reason through it confidently
+    in exams and on the ward.
+  </p>
+
+  <div class="byline">
+    <div class="byline-avatar">RK</div>
+    <div>
+      <div class="byline-name">Ramadhani Kimela</div>
+      <div class="byline-role">Medical Intern · AfyaNeuro</div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>
+      On a busy neurosurgical ward, you will encounter patients with strokes,
+      subarachnoid haemorrhages, and cerebral aneurysms. In all of these,
+      one structure sits at the centre of the conversation: the <strong>Circle
+      of Willis</strong>. Understanding it is not just an exam requirement —
+      it directly shapes how you interpret symptoms, read scans, and follow
+      the reasoning of the neurosurgeon beside you.
+    </p>
+
+    <p>
+      This article walks through the anatomy clearly, explains what the
+      circle actually does physiologically, and shows you how that knowledge
+      maps onto real clinical scenarios.
+    </p>
+
+    <h2>What is the Circle of Willis?</h2>
+
+    <p>
+      The Circle of Willis (officially the <em>circulus arteriosus cerebri</em>)
+      is a ring of arteries sitting at the base of the brain, in the
+      interpeduncular fossa. Its job is to connect the two main arterial
+      systems supplying the brain — the <strong>internal carotid system</strong>
+      (anterior) and the <strong>vertebrobasilar system</strong> (posterior) —
+      into a single communicating loop.
+    </p>
+
+    <p>
+      Think of it as a roundabout. Blood can enter from multiple roads, and
+      if one road is blocked, traffic can still reach its destination by
+      rerouting through the circle.
+    </p>
+
+    <!-- SVG Diagram -->
+    <div class="diagram-box">
+      <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, Arial, sans-serif">
+        <!-- Background -->
+        <rect width="500" height="420" fill="#14233a" rx="12"/>
+
+        <!-- Anterior communicating artery (top) -->
+        <line x1="195" y1="130" x2="305" y2="130" stroke="#ff7a1a" stroke-width="5" stroke-linecap="round"/>
+        <text x="250" y="118" text-anchor="middle" fill="#ffb877" font-size="10">Anterior Communicating A.</text>
+
+        <!-- Anterior cerebral arteries -->
+        <line x1="195" y1="130" x2="195" y2="185" stroke="#1e7fe0" stroke-width="5" stroke-linecap="round"/>
+        <line x1="305" y1="130" x2="305" y2="185" stroke="#1e7fe0" stroke-width="5" stroke-linecap="round"/>
+        <text x="130" y="160" text-anchor="middle" fill="#7fc0ff" font-size="10">L. Anterior</text>
+        <text x="130" y="172" text-anchor="middle" fill="#7fc0ff" font-size="10">Cerebral A.</text>
+        <text x="370" y="160" text-anchor="middle" fill="#7fc0ff" font-size="10">R. Anterior</text>
+        <text x="370" y="172" text-anchor="middle" fill="#7fc0ff" font-size="10">Cerebral A.</text>
+
+        <!-- Internal carotid arteries -->
+        <line x1="195" y1="185" x2="195" y2="240" stroke="#ff7a1a" stroke-width="6" stroke-linecap="round"/>
+        <line x1="305" y1="185" x2="305" y2="240" stroke="#ff7a1a" stroke-width="6" stroke-linecap="round"/>
+        <text x="120" y="218" text-anchor="middle" fill="#ffb877" font-size="10">L. Internal</text>
+        <text x="120" y="230" text-anchor="middle" fill="#ffb877" font-size="10">Carotid A.</text>
+        <text x="380" y="218" text-anchor="middle" fill="#ffb877" font-size="10">R. Internal</text>
+        <text x="380" y="230" text-anchor="middle" fill="#ffb877" font-size="10">Carotid A.</text>
+
+        <!-- Middle cerebral arteries (lateral branches) -->
+        <line x1="195" y1="210" x2="110" y2="210" stroke="#1e7fe0" stroke-width="4" stroke-linecap="round" stroke-dasharray="6,3"/>
+        <line x1="305" y1="210" x2="390" y2="210" stroke="#1e7fe0" stroke-width="4" stroke-linecap="round" stroke-dasharray="6,3"/>
+        <text x="62" y="214" text-anchor="middle" fill="#7fc0ff" font-size="9">L. MCA</text>
+        <text x="438" y="214" text-anchor="middle" fill="#7fc0ff" font-size="9">R. MCA</text>
+
+        <!-- Posterior communicating arteries -->
+        <line x1="195" y1="240" x2="195" y2="280" stroke="#ff7a1a" stroke-width="4" stroke-linecap="round" stroke-dasharray="5,3"/>
+        <line x1="305" y1="240" x2="305" y2="280" stroke="#ff7a1a" stroke-width="4" stroke-linecap="round" stroke-dasharray="5,3"/>
+        <text x="100" y="264" text-anchor="middle" fill="#ffb877" font-size="9">L. Post.</text>
+        <text x="100" y="275" text-anchor="middle" fill="#ffb877" font-size="9">Comm. A.</text>
+        <text x="400" y="264" text-anchor="middle" fill="#ffb877" font-size="9">R. Post.</text>
+        <text x="400" y="275" text-anchor="middle" fill="#ffb877" font-size="9">Comm. A.</text>
+
+        <!-- Posterior cerebral arteries -->
+        <line x1="195" y1="280" x2="195" y2="320" stroke="#2ecc71" stroke-width="5" stroke-linecap="round"/>
+        <line x1="305" y1="280" x2="305" y2="320" stroke="#2ecc71" stroke-width="5" stroke-linecap="round"/>
+        <text x="118" y="305" text-anchor="middle" fill="#2ecc71" font-size="10">L. Posterior</text>
+        <text x="118" y="317" text-anchor="middle" fill="#2ecc71" font-size="10">Cerebral A.</text>
+        <text x="382" y="305" text-anchor="middle" fill="#2ecc71" font-size="10">R. Posterior</text>
+        <text x="382" y="317" text-anchor="middle" fill="#2ecc71" font-size="10">Cerebral A.</text>
+
+        <!-- Basilar artery -->
+        <line x1="195" y1="320" x2="305" y2="320" stroke="#2ecc71" stroke-width="5" stroke-linecap="round"/>
+        <line x1="250" y1="320" x2="250" y2="385" stroke="#2ecc71" stroke-width="7" stroke-linecap="round"/>
+        <text x="250" y="332" text-anchor="middle" fill="#2ecc71" font-size="10">Basilar Artery</text>
+        <text x="250" y="400" text-anchor="middle" fill="#9aafc9" font-size="10">Vertebral Arteries ↓</text>
+
+        <!-- Central circle indicator -->
+        <circle cx="250" cy="230" r="28" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+        <text x="250" y="226" text-anchor="middle" fill="#ffffff" font-size="9" opacity="0.5">Circle</text>
+        <text x="250" y="238" text-anchor="middle" fill="#ffffff" font-size="9" opacity="0.5">of Willis</text>
+
+        <!-- Legend -->
+        <rect x="10" y="10" width="140" height="72" rx="6" fill="#0b1320" opacity="0.7"/>
+        <line x1="20" y1="28" x2="40" y2="28" stroke="#ff7a1a" stroke-width="4"/>
+        <text x="46" y="32" fill="#ffb877" font-size="9">Internal Carotid System</text>
+        <line x1="20" y1="44" x2="40" y2="44" stroke="#1e7fe0" stroke-width="4"/>
+        <text x="46" y="48" fill="#7fc0ff" font-size="9">Cerebral Branches</text>
+        <line x1="20" y1="60" x2="40" y2="60" stroke="#2ecc71" stroke-width="4"/>
+        <text x="46" y="64" fill="#2ecc71" font-size="9">Vertebrobasilar System</text>
+        <line x1="20" y1="74" x2="40" y2="74" stroke="#ff7a1a" stroke-width="3" stroke-dasharray="5,3"/>
+        <text x="46" y="78" fill="#ffb877" font-size="9">Communicating Arteries</text>
+      </svg>
+      <div class="diagram-caption">Fig 1. Simplified schematic of the Circle of Willis. The dashed lines represent the communicating arteries — the key to understanding collateral flow.</div>
+    </div>
+
+    <h2>The Components — Learn These Cold</h2>
+
+    <p>The circle has <strong>six named components</strong> you need to know:</p>
+
+    <h3>Anterior part (Internal Carotid System)</h3>
+    <p>
+      The two <strong>Internal Carotid Arteries (ICA)</strong> enter the skull and
+      give rise to the <strong>Anterior Cerebral Arteries (ACA)</strong>. These
+      run medially and supply the medial surfaces of the frontal and parietal lobes
+      — including the leg area of the motor cortex. The two ACAs are connected
+      across the midline by the short <strong>Anterior Communicating Artery (ACoA)</strong>.
+      This is the most common site of intracranial aneurysms.
+    </p>
+
+    <h3>Middle part</h3>
+    <p>
+      The <strong>Middle Cerebral Arteries (MCA)</strong> branch laterally from
+      the ICA — they are technically not part of the circle itself, but they
+      carry the majority of carotid blood to the lateral cortex, including
+      Broca's and Wernicke's areas, and the face and arm motor cortex. MCA
+      territory strokes are the most common type you will see on the ward.
+    </p>
+
+    <h3>Posterior part (Vertebrobasilar System)</h3>
+    <p>
+      The two vertebral arteries join to form the <strong>Basilar Artery</strong>,
+      which then bifurcates into the two <strong>Posterior Cerebral Arteries (PCA)</strong>.
+      These supply the occipital lobes (vision) and the inferior temporal lobes.
+      The PCAs connect to the ICA system via the <strong>Posterior Communicating
+      Arteries (PCoA)</strong> — completing the circle.
+    </p>
+
+    <div class="callout">
+      <div class="callout-label">Memory Aid</div>
+      <p>
+        <strong>"2 ICA → 2 ACA → 1 ACoA → 2 PCoA → 2 PCA → 1 Basilar → 2 Vertebral"</strong>
+        — trace the circle from front to back and count as you go. Once you can draw it
+        from memory in under 60 seconds, you own this topic.
+      </p>
+    </div>
+
+    <h2>Why Does the Circle Matter Clinically?</h2>
+
+    <p>
+      The circle exists as a <strong>collateral safety net</strong>. In theory,
+      if one major feeding artery is gradually occluded, blood can reroute through
+      the communicating arteries to maintain perfusion on the affected side.
+    </p>
+
+    <p>
+      The key word is <em>gradually</em>. A slow stenosis (as in atherosclerosis)
+      gives the collaterals time to compensate. A sudden occlusion (as in an
+      embolism) does not — the circle cannot respond fast enough, and infarction
+      follows.
+    </p>
+
+    <div class="callout blue">
+      <div class="callout-label">Clinical Pearl</div>
+      <p>
+        A complete, well-formed Circle of Willis is actually present in only about
+        <strong>20–25% of people</strong>. The rest have variations — a missing
+        PCoA here, a hypoplastic ACA there. This is why two patients with the same
+        vessel occlusion can have very different outcomes: the one with better
+        collaterals survives with less deficit.
+      </p>
+    </div>
+
+    <h2>Aneurysms — Where and Why</h2>
+
+    <p>
+      Intracranial aneurysms love the branching points of the circle, where
+      turbulent blood flow creates mechanical stress on vessel walls over years.
+      The most common sites, in order:
+    </p>
+
+    <div class="key-points">
+      <h3>Common Aneurysm Sites</h3>
+      <ul>
+        <li><strong>Anterior Communicating Artery (ACoA) — ~30–35%</strong> of all intracranial aneurysms. Rupture causes classic subarachnoid haemorrhage with sudden-onset "thunderclap headache."</li>
+        <li><strong>Posterior Communicating Artery (PCoA) — ~25%.</strong> Classically causes a painful third nerve palsy — ptosis, dilated pupil, eye deviated "down and out." This is a neurosurgical emergency.</li>
+        <li><strong>Middle Cerebral Artery bifurcation — ~20%.</strong> Often presents with stroke-like features on rupture.</li>
+        <li><strong>Basilar tip — ~5–10%.</strong> Less common but difficult to treat surgically; often managed with endovascular coiling.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Exam Favourite</div>
+      <p>
+        <strong>Posterior communicating aneurysm + painful CN III palsy</strong>
+        is one of the highest-yield clinical scenarios in neurosurgery exams.
+        The key distinguishing feature from a medical CN III palsy (e.g. diabetic)
+        is pupil involvement — a surgical CN III palsy typically spares nothing,
+        including the pupil, because the aneurysm compresses the outer
+        parasympathetic fibres first.
+      </p>
+    </div>
+
+    <h2>Putting It Together at the Bedside</h2>
+
+    <p>
+      When you see a patient with a focal neurological deficit, your first
+      question should be: <em>which vascular territory does this map to?</em>
+    </p>
+
+    <div class="key-points">
+      <h3>Territory → Deficit Quick Reference</h3>
+      <ul>
+        <li><strong>ACA territory:</strong> Contralateral leg weakness and sensory loss (leg area of motor/sensory cortex is medial). Personality changes if frontal involvement.</li>
+        <li><strong>MCA territory:</strong> Contralateral face and arm weakness, sensory loss. Aphasia if dominant hemisphere. Neglect if non-dominant. The most common stroke you will see.</li>
+        <li><strong>PCA territory:</strong> Contralateral homonymous hemianopia (visual field cut) with macular sparing. Memory disturbance if hippocampus involved.</li>
+        <li><strong>Basilar/vertebral territory:</strong> The "5 Ds" — Diplopia, Dysarthria, Dysphagia, Dizziness, Drop attacks. Any combination should raise posterior circulation stroke until proven otherwise.</li>
+      </ul>
+    </div>
+
+    <h2>The Bottom Line</h2>
+
+    <p>
+      The Circle of Willis is not just anatomy to memorise for an exam and forget.
+      It is the framework through which you understand why a stroke produces the
+      deficit it does, why an aneurysm at a particular site causes a particular
+      cranial nerve palsy, and why some patients recover better than others from
+      the same insult.
+    </p>
+
+    <p>
+      Learn the anatomy until you can draw it from memory. Then practise mapping
+      clinical findings back to territories. Do that consistently, and this
+      topic becomes one of your strongest tools on the ward — not just a diagram
+      in a textbook.
+    </p>
+
+    <div class="callout green">
+      <div class="callout-label">Take Home Points</div>
+      <p>
+        The Circle of Willis connects the internal carotid and vertebrobasilar
+        systems via communicating arteries. It provides collateral flow but only
+        functions well with gradual occlusion. Aneurysms favour branching points —
+        ACoA most commonly. Know your vascular territories: ACA = leg, MCA = face
+        and arm, PCA = vision, Basilar = the 5 Ds.
+      </p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="author-box">
+      <div class="author-avatar">RK</div>
+      <div>
+        <div class="author-name">Ramadhani Kimela</div>
+        <div class="author-bio">
+          Medical intern at a referral hospital in East Africa, working toward a
+          career in neurosurgery. AfyaNeuro makes neurosurgery and neuroanatomy accessible for students and junior doctors across East Africa and beyond. Contact: afyaneurospot@gmail.com · +255 747 822 166
+        </div>
+      </div>
+    </div>
+
+    <div class="share-row">
+      <span class="share-label">Share this article:</span>
+      <a class="share-btn" href="https://x.com/intent/tweet?text=The+Circle+of+Willis+explained+clearly+for+medical+students+%E2%80%94+by+%40afyaneuro&url=https://afyaneuro.com/circle-of-willis" target="_blank" rel="noopener">Share on X</a>
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://afyaneuro.com/circle-of-willis" target="_blank" rel="noopener">Share on LinkedIn</a>
+      <a class="share-btn" href="https://buymeacoffee.com/afyaneuro" target="_blank" rel="noopener">☕ Support AfyaNeuro</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <a href="index.html">← Back to AfyaNeuro</a> &nbsp;·&nbsp;
+  © <span id="yr"></span> AfyaNeuro — Ramadhani Kimela &nbsp;·&nbsp;
+  <a href="mailto:afyaneurospot@gmail.com">afyaneurospot@gmail.com</a>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
