@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cranial Nerves Made Simple — AfyaNeuro</title>
+<meta name="description" content="A practical bedside approach to all 12 cranial nerves — for exams and real ward use. By Ramadhani Kimela, AfyaNeuro.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@afyaneuro">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{--bg:#ffffff;--bg-soft:#f4f7fc;--panel:#eef2f9;--line:#d0daea;--text:#0d1b2e;--text-dim:#4a6080;--accent:#1a4fa8;--accent-soft:#2e6dd4;--blue:#1a4fa8;--blue-soft:#2e6dd4;--serif:"Source Serif 4",Georgia,serif;--sans:"IBM Plex Sans",Arial,sans-serif;--mono:"IBM Plex Mono",monospace;}
+  *{box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;}
+  a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+  header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 6vw;border-bottom:1px solid var(--line);background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);box-shadow:0 1px 0 #d0daea;}
+  .logo{display:flex;align-items:center;gap:0.6rem;font-family:var(--serif);font-size:1.2rem;font-weight:700;text-decoration:none;}
+  .logo img{height:34px;width:auto;}.logo .afya{color:#1a4fa8;}.logo .neuro{color:#e05a00;}
+  .back-link{font-size:0.9rem;color:var(--text-dim);}.back-link:hover{color:var(--text);text-decoration:none;}
+  .article-wrap{max-width:720px;margin:0 auto;padding:4rem 6vw 6rem;}
+  .article-meta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2rem;}
+  .topic-badge{font-family:var(--mono);font-size:0.75rem;color:var(--accent);background:rgba(255,122,26,0.12);border:1px solid rgba(255,122,26,0.3);border-radius:999px;padding:0.25rem 0.75rem;text-transform:uppercase;letter-spacing:0.1em;}
+  .meta-text{font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);}
+  .article-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:700;line-height:1.1;margin:0 0 1rem;}
+  .article-subtitle{font-size:1.15rem;color:var(--text-dim);margin-bottom:2rem;line-height:1.6;}
+  .byline{display:flex;align-items:center;gap:0.8rem;padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:2.5rem;}
+  .byline-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a4fa8,#e05a00);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0;}
+  .byline-name{font-weight:600;font-size:0.95rem;}.byline-role{font-size:0.82rem;color:var(--text-dim);}
+  .article-body h2{font-family:var(--serif);font-size:1.6rem;font-weight:600;margin:2.5rem 0 0.8rem;}
+  .article-body h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;margin:2rem 0 0.6rem;color:var(--accent-soft);}
+  .article-body p{margin:0 0 1.3rem;font-size:1.05rem;}
+  .article-body strong{color:var(--accent-soft);}
+  .article-body em{color:var(--blue-soft);font-style:italic;}
+  .callout{border-left:3px solid #1a4fa8;background:#eef2f9;border-radius:0 10px 10px 0;padding:1.2rem 1.4rem;margin:1.8rem 0;}
+  .callout.blue{border-left-color:#2e6dd4;}.callout.green{border-left-color:#27ae60;}
+  .callout-label{font-family:var(--mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:#1a4fa8;margin-bottom:0.5rem;}
+  .callout.blue .callout-label{color:var(--blue-soft);}.callout.green .callout-label{color:#2ecc71;}
+  .callout p{margin:0;font-size:0.97rem;color:var(--text-dim);}
+  .cn-table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.9rem;}
+  .cn-table th{background:#1a4fa8;color:#fff;padding:0.7rem 1rem;text-align:left;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.06em;}
+  .cn-table td{padding:0.7rem 1rem;border-bottom:1px solid var(--line);color:var(--text-dim);vertical-align:top;}
+  .cn-table tr:nth-child(even) td{background:var(--panel);}
+  .cn-table .cn-num{color:var(--accent);font-weight:700;font-family:var(--mono);}
+  .cn-table .cn-name{color:var(--text);font-weight:600;}
+  .key-points{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.8rem;margin:2rem 0;}
+  .key-points h3{margin:0 0 1rem;font-family:var(--serif);font-size:1.1rem;color:var(--accent-soft);}
+  .key-points ul{margin:0;padding-left:1.2rem;}
+  .key-points li{color:var(--text-dim);font-size:0.97rem;margin-bottom:0.6rem;line-height:1.6;}
+  .key-points li strong{color:var(--text);}
+  .divider{border:none;border-top:1px solid var(--line);margin:2.5rem 0;}
+  .author-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.6rem;margin-top:3rem;display:flex;gap:1.2rem;align-items:flex-start;}
+  .author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1a4fa8,#e05a00);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.3rem;color:#fff;flex-shrink:0;}
+  .author-name{font-weight:600;font-size:1rem;margin-bottom:0.2rem;}
+  .author-bio{font-size:0.88rem;color:var(--text-dim);line-height:1.6;}
+  .share-row{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;}
+  .share-label{font-size:0.88rem;color:var(--text-dim);}
+  .share-btn{display:inline-block;padding:0.5rem 1.1rem;border-radius:999px;font-size:0.85rem;font-weight:600;border:1px solid var(--line);color:var(--text);transition:border-color 0.15s,color 0.15s;}
+  .share-btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+  footer{border-top:1px solid var(--line);padding:2rem 6vw;text-align:center;color:var(--text-dim);font-size:0.85rem;}
+  footer a{color:var(--text-dim);}footer a:hover{color:var(--accent);}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo"><img src="afyaneuro-logo.png" alt="AfyaNeuro"><span class="afya">Afya</span><span class="neuro">Neuro</span></a>
+  <a href="index.html" class="back-link">← Back to articles</a>
+</header>
+<div class="article-wrap">
+  <div class="article-meta">
+    <span class="topic-badge">Exam Prep</span>
+    <span class="meta-text">July 2026 · 7 min read</span>
+  </div>
+  <h1 class="article-title">Cranial Nerves Made Simple: A Bedside Approach</h1>
+  <p class="article-subtitle">A practical, exam-friendly way to test and remember all twelve cranial nerves — built from real ward exams, not just textbook diagrams.</p>
+  <div class="byline">
+    <div class="byline-avatar">RK</div>
+    <div><div class="byline-name">Ramadhani Kimela</div><div class="byline-role">Medical Intern · AfyaNeuro</div></div>
+  </div>
+  <div class="article-body">
+
+    <p>The cranial nerve exam is one of those things that looks intimidating on paper but becomes almost automatic once you've done it enough times at the bedside. Twelve nerves, each with a specific function, each testable in under a minute if you know exactly what you're doing.</p>
+    <p>This article gives you the framework I use on the ward — a logical sequence, clear testing methods, and the clinical findings that actually matter. By the end, you should be able to run through all twelve without needing to think about the order.</p>
+
+    <div class="callout">
+      <div class="callout-label">Memory Aid</div>
+      <p><strong>"Oh Oh Oh To Touch And Feel Very Good Velvet — Ah Heaven!"</strong> — the first letter of each word gives you CN I through XII: Olfactory, Optic, Oculomotor, Trochlear, Trigeminal, Abducens, Facial, Vestibulocochlear, Glossopharyngeal, Vagus, Accessory, Hypoglossal.</p>
+    </div>
+
+    <h2>The Full Table — At a Glance</h2>
+
+    <table class="cn-table">
+      <thead><tr><th>No.</th><th>Name</th><th>Type</th><th>Function</th><th>How to Test</th></tr></thead>
+      <tbody>
+        <tr><td class="cn-num">I</td><td class="cn-name">Olfactory</td><td>Sensory</td><td>Smell</td><td>Test each nostril separately with familiar scent (coffee, soap). Often skipped unless relevant.</td></tr>
+        <tr><td class="cn-num">II</td><td class="cn-name">Optic</td><td>Sensory</td><td>Vision</td><td>Visual acuity, visual fields (confrontation), pupillary light reflex (afferent limb), fundoscopy.</td></tr>
+        <tr><td class="cn-num">III</td><td class="cn-name">Oculomotor</td><td>Motor</td><td>Eye movement, pupil constriction, eyelid</td><td>Pupil size/reaction, "H" pattern eye movements, check for ptosis.</td></tr>
+        <tr><td class="cn-num">IV</td><td class="cn-name">Trochlear</td><td>Motor</td><td>Superior oblique (down and in)</td><td>Ask patient to look down and inward. Palsy causes vertical diplopia worse going downstairs.</td></tr>
+        <tr><td class="cn-num">V</td><td class="cn-name">Trigeminal</td><td>Both</td><td>Face sensation, muscles of mastication</td><td>Light touch V1/V2/V3, corneal reflex (afferent), clench teeth, open jaw against resistance.</td></tr>
+        <tr><td class="cn-num">VI</td><td class="cn-name">Abducens</td><td>Motor</td><td>Lateral rectus (abduction)</td><td>Ask patient to look laterally. Palsy = eye can't abduct, horizontal diplopia worse looking to affected side.</td></tr>
+        <tr><td class="cn-num">VII</td><td class="cn-name">Facial</td><td>Both</td><td>Face movement, taste (anterior 2/3 tongue), lacrimation</td><td>Raise eyebrows, screw eyes shut, show teeth, puff cheeks. Upper vs lower motor neuron pattern is key.</td></tr>
+        <tr><td class="cn-num">VIII</td><td class="cn-name">Vestibulocochlear</td><td>Sensory</td><td>Hearing, balance</td><td>Whisper test, Rinne and Weber tuning fork tests.</td></tr>
+        <tr><td class="cn-num">IX</td><td class="cn-name">Glossopharyngeal</td><td>Both</td><td>Taste (posterior 1/3 tongue), gag reflex (afferent)</td><td>Usually tested with CN X together — gag reflex, voice quality, palate movement.</td></tr>
+        <tr><td class="cn-num">X</td><td class="cn-name">Vagus</td><td>Both</td><td>Palate/pharynx/larynx movement, gag (efferent), autonomics</td><td>Say "Aah" — palate should rise symmetrically. Uvula deviates away from lesion side.</td></tr>
+        <tr><td class="cn-num">XI</td><td class="cn-name">Accessory</td><td>Motor</td><td>Sternocleidomastoid, trapezius</td><td>Shoulder shrug against resistance (trapezius), turn head against resistance (SCM).</td></tr>
+        <tr><td class="cn-num">XII</td><td class="cn-name">Hypoglossal</td><td>Motor</td><td>Tongue movement</td><td>Protrude tongue — deviates toward the side of the lesion (LMN). Look for wasting/fasciculations.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The Ones That Catch People Out</h2>
+
+    <h3>CN III, IV, VI — Eye movements together</h3>
+    <p>These three are always tested together. Use the "H" pattern — ask the patient to follow your finger without moving their head, tracing a large H in the air. This tests all six extraocular muscles.</p>
+    <p><strong>CN III palsy:</strong> eye is "down and out" (unopposed action of SO and LR), with ptosis and a dilated unreactive pupil. Think posterior communicating artery aneurysm or uncal herniation.</p>
+    <p><strong>CN VI palsy:</strong> the most common, often a false localising sign in raised ICP (the nerve has a long intracranial course). Medial deviation of the eye at rest, failure to abduct.</p>
+    <p><strong>CN IV palsy:</strong> the subtlest. Vertical diplopia, worse looking down. Patient often tilts head away from affected side to compensate — look for the head tilt.</p>
+
+    <h3>CN VII — Upper vs Lower Motor Neuron</h3>
+    <p>This is one of the highest-yield distinctions in clinical neurology.</p>
+
+    <div class="key-points">
+      <h3>UMN vs LMN Facial Palsy</h3>
+      <ul>
+        <li><strong>UMN lesion (e.g. stroke):</strong> The forehead is SPARED. The patient can still wrinkle their forehead and close their eye, but the lower face is weak. This is because the forehead has bilateral cortical representation.</li>
+        <li><strong>LMN lesion (e.g. Bell's palsy):</strong> The entire ipsilateral face is affected — forehead, eye, AND mouth. The patient cannot close their eye, which risks corneal damage.</li>
+        <li><strong>Quick test:</strong> Ask "Can you raise your eyebrows?" If yes and the lower face is still weak — think stroke (UMN). If they can't raise the eyebrow either — think Bell's palsy or another LMN cause.</li>
+      </ul>
+    </div>
+
+    <h3>CN X — Uvula deviation</h3>
+    <p>When you ask a patient to say "Aah," the soft palate should rise symmetrically. With a unilateral CN X lesion, the palate is pulled toward the normal side, and the uvula deviates <em>away</em> from the lesion. Remember: uvula runs away from the problem.</p>
+
+    <h3>CN XII — Tongue deviation</h3>
+    <p>The tongue deviates <em>toward</em> the side of a lower motor neuron lesion — the weak side. With a unilateral LMN lesion you'll also see wasting and fasciculations on that side. With a UMN lesion (e.g. contralateral stroke), the tongue deviates away from the lesion, toward the weak side — same principle, opposite direction from CN X.</p>
+
+    <div class="callout blue">
+      <div class="callout-label">Exam Pearl</div>
+      <p><strong>Uvula away from lesion. Tongue toward lesion.</strong> Write this on your hand before every clinical exam. It comes up constantly.</p>
+    </div>
+
+    <h2>A Logical Bedside Sequence</h2>
+    <p>On the ward, you rarely need to test all twelve. But when you do — a comatose patient, a stroke workup, a posterior fossa tumour — work in this order to look systematic and not miss anything:</p>
+
+    <div class="key-points">
+      <h3>Ward Sequence</h3>
+      <ul>
+        <li><strong>Start at the top:</strong> CN I (ask about smell) → CN II (vision, pupils, fundoscopy) → CN III/IV/VI (eye movements, pupils) → CN V (face sensation, corneal reflex, jaw)</li>
+        <li><strong>Middle:</strong> CN VII (facial movement — forehead first) → CN VIII (hearing, Rinne/Weber)</li>
+        <li><strong>Lower cranial nerves together:</strong> CN IX/X (gag, palate, voice) → CN XI (shoulder shrug, head turn) → CN XII (tongue protrusion)</li>
+        <li><strong>Document each nerve by number</strong> in your notes — it makes the record clear and shows you haven't skipped anything.</li>
+      </ul>
+    </div>
+
+    <h2>Common Clinical Scenarios</h2>
+
+    <div class="key-points">
+      <h3>Cranial Nerve Patterns Worth Knowing</h3>
+      <ul>
+        <li><strong>Painful CN III palsy + headache:</strong> Posterior communicating artery aneurysm until proven otherwise. Urgent CT angiography.</li>
+        <li><strong>Painless CN III palsy:</strong> More likely diabetic mononeuropathy — pupil usually spared (ischaemia affects the core, sparing outer parasympathetic fibres).</li>
+        <li><strong>CN VI palsy in a child with headache and vomiting:</strong> False localising sign from raised ICP — think posterior fossa tumour.</li>
+        <li><strong>Unilateral LMN CN VII palsy:</strong> Bell's palsy is the most common cause — but always exclude Ramsay Hunt (look for vesicles in the ear), parotid tumour, and Lyme disease.</li>
+        <li><strong>Multiple cranial nerve palsies:</strong> Think skull base — tumour, meningitis, or nasopharyngeal carcinoma.</li>
+      </ul>
+    </div>
+
+    <h2>The Bottom Line</h2>
+    <p>The cranial nerve exam is not about memorising a list — it is about having a systematic approach that you can run through quickly and confidently. Practise it on every neurology or neurosurgery patient you see, even if they don't have a cranial nerve complaint. Speed and confidence come from repetition.</p>
+    <p>Know the UMN vs LMN facial distinction cold. Know what a CN III palsy looks like and what it means. Know that the uvula runs away and the tongue points toward. Those three alone will carry you through most exams and most ward situations.</p>
+
+    <div class="callout green">
+      <div class="callout-label">Take Home Points</div>
+      <p>Mnemonic: "Oh Oh Oh To Touch And Feel Very Good Velvet — Ah Heaven!" UMN facial palsy spares the forehead; LMN does not. Uvula deviates away from lesion; tongue deviates toward. Painful CN III = aneurysm until proven otherwise. Multiple CN palsies = think skull base. Practise the exam on every patient — speed comes from repetition.</p>
+    </div>
+
+    <hr class="divider">
+    <div class="author-box">
+      <div class="author-avatar">RK</div>
+      <div>
+        <div class="author-name">Ramadhani Kimela</div>
+        <div class="author-bio">Medical intern at a referral hospital in East Africa, working toward neurosurgery. AfyaNeuro makes neurosurgery and neuroanatomy accessible for students and junior doctors across the continent and beyond. Contact: afyaneurospot@gmail.com · +255 747 822 166</div>
+      </div>
+    </div>
+    <div class="share-row">
+      <span class="share-label">Share:</span>
+      <a class="share-btn" href="https://x.com/intent/tweet?text=Cranial+Nerves+Made+Simple+—+a+bedside+guide+by+%40afyaneuro&url=https://afyaneuro.com/cranial-nerves.html" target="_blank" rel="noopener">Share on X</a>
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://afyaneuro.com/cranial-nerves.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+      <a class="share-btn" href="https://buymeacoffee.com/afyaneuro" target="_blank" rel="noopener">☕ Support AfyaNeuro</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <a href="index.html">← Back to AfyaNeuro</a> &nbsp;·&nbsp; © <span id="yr"></span> AfyaNeuro &nbsp;·&nbsp; <a href="mailto:afyaneurospot@gmail.com">afyaneurospot@gmail.com</a>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
